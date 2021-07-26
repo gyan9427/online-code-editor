@@ -1,0 +1,28 @@
+.editor-frame{
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    margin-inline: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(74,74,74,0.9);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.editor{
+    background-color: rgba(74,74,74,0.9);
+}
+.inner-frame{
+    position: relative;
+}
+.code-Editor > *{
+    text-align: left;
+}
+.ctrl-btns{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: black;
+    padding:5px;
+    display:flex;
+    justify-content: space-between;
+}

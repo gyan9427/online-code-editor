@@ -24,6 +24,12 @@
   color: white;
 }
 
+.pane.top-pane{
+  display: flex;
+  justify-content: space-evenly;
+   width: 100%;
+}
+
 .App-link {
   color: #61dafb;
 }
