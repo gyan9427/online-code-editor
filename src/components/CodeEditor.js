@@ -15,8 +15,11 @@ class CodeEditor extends React.Component{
 
 
  handleChange = (editor,data,value)=>{
-       console.log(this.props.language);
-}    
+       
+        this.props.srcCode(value,this.props.language)
+        
+        }
+    
 render(){
     const language = this.props.language
     const codeOptions = {
@@ -32,6 +35,7 @@ render(){
                     <button className="expand-btn">
                         <i className="fas fa-expand"></i>
                     </button>
+                    <h4 style={{ color: "white"}}>{this.props.language}</h4>
                     <button className="collapse-btn">
                         <i className="fas fa-minus-square"></i> 
                     </button>

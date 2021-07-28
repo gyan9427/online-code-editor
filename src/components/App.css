@@ -23,7 +23,11 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+iframe{
+  width: 100%;
+  border: none;
+  height: 300px;
+}
 .pane.top-pane{
   display: flex;
   justify-content: space-evenly;

@@ -7,20 +7,44 @@ import CodeEditor from './CodeEditor';
 class App extends React.Component{
   state = {
     editors: ['xml','javascript','css'],
-    srcDoc:"",
+    srcDoc:'',
+    html:'',
+    js:'',
+    css:'',
   }
 
-  setSrcDocHandler = (html=null,js=null,css=null) => {
+  setSrcDocHandler = (code,lang) => {
+    let innerCode = null;
+    
+    if(lang === "xml"){
+      innerCode = `${code}`
+      // innerCode = html.concat(` ${innerCode}`)
+      this.setState({html:innerCode})
+    }
+    if(lang === "javascript"){
+      innerCode = `${code}`
+      // innerCode = js.concat(` ${innerCode}`)
+      this.setState({js:innerCode})
+    }
+    if(lang ==="css"){
+      innerCode = `${code}`
+      // innerCode = css.concat(` ${innerCode}`)
+      this.setState({css:innerCode})
+    }
+
     const updatedCode = `
     <html>
-      <body>${html}</body>
-      <style>${css}</style>
-      <script>${js}</script>
+      <body>
+      ${this.state.html}
+      
+      </body>
+      <style>${this.state.css}</style>
+      <script>${this.state.js}</script>
     </html>
     `
     this.setState({srcDoc:updatedCode})
   }
- 
+
   render(){
     const editorCount = this.state.editors;
     const editors = editorCount.map(editor => {
@@ -28,7 +52,7 @@ class App extends React.Component{
         <CodeEditor
           language = {editor}
           displayName = {editor}
-          
+          srcCode = {this.setSrcDocHandler}
         />
       )
     })
